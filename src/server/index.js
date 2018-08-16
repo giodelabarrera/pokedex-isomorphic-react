@@ -5,13 +5,7 @@ import React from 'react'
 import App from '../shared/App'
 
 const app = express()
-// app.use('/static', express.static('./dist'));
 app.use(express.static('./build'));
-
-// const routes = [
-//     '/',
-//     '/p/:id'
-// ];
 
 app.get('*', (req, res) => {
 

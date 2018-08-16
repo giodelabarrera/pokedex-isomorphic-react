@@ -1,17 +1,17 @@
+'use strict';
 
 const nodeExternals = require('webpack-node-externals');
 const path = require('path')
-const srcPath = path.resolve(__dirname, 'src')
-const buildPath = path.resolve(__dirname, 'build');
+const paths = require('./paths')
 
 module.exports = {
   // mode: 'development',
   // directorio padre del entry
-  context: srcPath,
-  entry: './server/index.js',
+  context: paths.appSrc,
+  entry: paths.appServerIndexJs,
   output: {
-    path: buildPath,
-    filename: 'server.js'
+    path: paths.appBuild,
+    filename: 'static/js/server.js'
   },
   // compilar para entorno node
   target: 'node',
