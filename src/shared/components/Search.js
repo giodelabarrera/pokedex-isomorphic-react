@@ -19,7 +19,7 @@ class Search extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type="text" placeholder="Buscar" onChange={this.handleInputChange}/>
+        <input type="text" placeholder="Buscar" onChange={this.handleInputChange} value={this.state.query}/>
       </form>
     )
   }

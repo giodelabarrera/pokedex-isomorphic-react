@@ -21,7 +21,7 @@ export default (element, props = {}) => {
       </head>
       <body>
           <div id="root">${renderToString(element)}</div>
-          <!-- <script src="/static/client.js"></script> -->
+          <script src="/static/js/client.js"></script>
           ${javascripts}
       </body>
     </html>

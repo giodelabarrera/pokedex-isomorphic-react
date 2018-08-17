@@ -1,8 +1,10 @@
 {
   "name": "pokedex",
   "version": "1.0.0",
-  "description": "pokedex",
-  "main": "index.js",
+  "description": "pokedex react universal",
+  "main": "src",
+  "author": "Giorgio de la Barrera <giodelabarrera@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "build": "webpack --config config/webpack.config.server.prod.js && webpack --config webpack.config.client.prod.js",
     "start": "node build/static/js/server.js",
@@ -10,14 +12,13 @@
     "dev:client": "NODE_ENV=development webpack --config config/webpack.config.client.js --watch",
     "dev:start": "NODE_ENV=development nodemon build/static/js/server.js --watch"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",
     "file-loader": "^1.1.11",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-router": "^4.3.1"
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

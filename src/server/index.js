@@ -2,6 +2,7 @@
 import express from 'express'
 import render from './render'
 import React from 'react'
+import { StaticRouter as Router, matchPath } from 'react-router';
 import App from '../shared/App'
 
 const app = express()
@@ -9,7 +10,13 @@ app.use(express.static('./build'));
 
 app.get('*', (req, res) => {
 
-  res.status(200).send(render(<App />))
+  res.status(200).send(render(
+    (
+      <Router context={{}} location={req.url}>
+        <App />
+      </Router>
+    )
+  ));
 
 
   // return res.send(logo);
