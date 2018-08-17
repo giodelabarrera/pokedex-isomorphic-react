@@ -4,8 +4,11 @@
   "description": "pokedex",
   "main": "index.js",
   "scripts": {
-    "dev:server": "webpack --mode development --config config/webpack.config.server.js --watch",
-    "dev:start": "nodemon build/static/js/server.js --watch"
+    "build": "webpack --config config/webpack.config.server.prod.js && webpack --config webpack.config.client.prod.js",
+    "start": "node build/static/js/server.js",
+    "dev:server": "NODE_ENV=development webpack --config config/webpack.config.server.js --watch",
+    "dev:client": "NODE_ENV=development webpack --config config/webpack.config.client.js --watch",
+    "dev:start": "NODE_ENV=development nodemon build/static/js/server.js --watch"
   },
   "author": "",
   "license": "ISC",
@@ -21,15 +24,10 @@
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-react-app": "^3.1.2",
     "nodemon": "^1.18.3",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",
     "webpack-node-externals": "^1.7.2"
-  },
-  "babel": {
-    "presets": [
-      "env",
-      "react"
-    ]
   }
 }
