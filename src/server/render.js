@@ -1,28 +1,22 @@
-import { renderToString } from 'react-dom/server';
 
-export default (element, props = {}) => {
+export default (content, helmet) => {
 
-  const metas = props.metas || ''
-  const stylesheets = props.stylesheets || ''
-  const title = props.title || ''
-  const javascripts = props.javascripts || ''
-  
+  const htmlAttributes = helmet.htmlAttributes.toString() || `lang="en"`
+  const bodyAttributes = helmet.bodyAttributes.toString() || ``
+
   return `
     <!DOCTYPE html>
-    <html lang="en">
+    <html ${htmlAttributes}>
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-        <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-        ${metas}
-        ${stylesheets}
-        <title>${title}</title>
+        ${helmet.title.toString()}
+        ${helmet.meta.toString()}
+        ${helmet.link.toString()}
       </head>
-      <body>
-          <div id="root">${renderToString(element)}</div>
+      <body ${bodyAttributes}>
+          <div id="root">${content}</div>
           <script src="/static/js/client.js"></script>
-          ${javascripts}
       </body>
     </html>
     `;

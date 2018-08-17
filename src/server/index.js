@@ -2,7 +2,9 @@
 import express from 'express'
 import render from './render'
 import React from 'react'
-import { StaticRouter as Router, matchPath } from 'react-router';
+import { StaticRouter, matchPath } from 'react-router';
+import { renderToString } from 'react-dom/server';
+import Helmet from 'react-helmet'
 import App from '../shared/App'
 
 const app = express()
@@ -10,13 +12,17 @@ app.use(express.static('./build'));
 
 app.get('*', (req, res) => {
 
-  res.status(200).send(render(
+  const content = renderToString(
     (
-      <Router context={{}} location={req.url}>
+      <StaticRouter context={{}} location={req.url}>
         <App />
-      </Router>
+      </StaticRouter>
     )
-  ));
+  )
+
+  const helmet = Helmet.renderStatic();
+
+  res.status(200).send(render(content, helmet));
 
 
   // return res.send(logo);
