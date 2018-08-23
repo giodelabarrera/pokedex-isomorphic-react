@@ -10,7 +10,30 @@ import App from '../shared/App'
 const app = express()
 app.use(express.static('./build'));
 
+const routes = [
+  {
+    path: '/'
+  },
+  {
+    path: '/p/:id'
+  },
+];
+
 app.get('*', (req, res) => {
+
+  let match = null
+  debugger
+  routes.forEach(route => {
+    match = matchPath(req.url, route)
+  })
+
+
+
+  // const match = routes.reduce((acc, route) => matchPath(req.url, route, { exact: true }) || acc, null);
+  // if (!match) {
+  //   res.status(404).send(render(<NoMatch />));
+  //   return;
+  // }
 
   const content = renderToString(
     (
