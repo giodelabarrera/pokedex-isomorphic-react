@@ -1,8 +1,27 @@
 
+# Pokedex Isomorphic React 
+
+Web application to know the details 📟 of a pokémon
+
+TODO Live demo 
+
+## Screenshot
+
+TODO
+
+## Technologies
+
+- Node
+- React
+- React Server
+- React Router
+- Webpack
+- Babel
+- SASS
+- Typescript (TODO)
+- Bulma (TODO)
 
 # Resources
-
-Universal / Isomorphic App, Arquitecture, Webpack
 
 - [lgimeneza/auction-app](https://github.com/lgimeneza/auction-app)
 - [technology-ebay-de/universal-react-router4](https://github.com/technology-ebay-de/universal-react-router4)
@@ -14,5 +33,3 @@ Universal / Isomorphic App, Arquitecture, Webpack
 - [facebook/create-react-app](https://github.com/facebook/create-react-app)
 
 - [Webpack Academy](https://webpack.academy/)
-
-<!-- files (skylabsfiles)-->
