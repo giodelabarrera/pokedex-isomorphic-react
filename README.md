@@ -21,7 +21,7 @@ TODO
 - Typescript (TODO)
 - Bulma (TODO)
 
-# Resources
+## Resources
 
 - [lgimeneza/auction-app](https://github.com/lgimeneza/auction-app)
 - [technology-ebay-de/universal-react-router4](https://github.com/technology-ebay-de/universal-react-router4)
